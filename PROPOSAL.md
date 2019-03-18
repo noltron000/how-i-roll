@@ -1,5 +1,5 @@
 # Project Proposal
-> **Goal:** Create an open-source dice-roller application, written in GoLang.<br />
+> **Goal:** Create an open-source dice-roller application, using Agile Development techniques.<br />
 > **Challenge:** Make it better than those that already exist on the web.
 
 A dice-roller application starts simple in scope, yet many interesting features can be built on
@@ -15,14 +15,14 @@ There are plenty of apps like this that exist, but none of them are particularly
 
 
 ## Project Scope
-This project has been started late. The deadline is within the week. Because of this, careful scoping mechanisms have been put in place.
+This project has a week to be completed. Because of this, careful scoping mechanisms have been put in place.
 
-The idea is that a project MVP can be shipped within a few hours. At its core, this app is incredibly simple. Once this is done, more features can easily be added to the application.
+The idea is that a project MVP can be shipped within a few hours. At its core, this app is incredibly simple. Once this is done, more features can easily be iterated into the application.
 
 This version of the application will be bare-bones basic.
 
 ### `v0.1` MVP
-There is limited scope for this iteration. Hopefully this can be set up in a few hours. The biggest hurdle will be deploying a live web app to heroku or netlify using a GoLang backend.
+There is limited scope for this iteration. Hopefully this can be set up in a few hours. The biggest hurdle will be deploying a live web app to heroku or netlify.
 
 #### `HTML` Components
 The components for this version will be limited. Just three elements are needed:
