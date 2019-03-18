@@ -2,24 +2,27 @@ import React, { Component } from 'react';
 import '../css/app.css';
 
 class App extends Component {
+	roll_dice = () => {
+		console.log('hello!')
+	}
+
 	render() {
 		return (
 			<div>
 				<h1>How I Roll</h1>
-
 				<form action='/roll' method='GET'>
-					<div class='module'>
-						<label for='dice'>Input Dice:</label>
-						<textarea type='text' name='dice' id='dice'>4d6</textarea>
+					<div className='module'>
+						<label htmlFor='dice'>Input Dice:</label>
+						<textarea type='text' name='dice' id='dice' defaultValue='4d6'></textarea>
 					</div>
 
-					<div class='module bar'>
-						<button type='submit'>Roll Dice</button>
+					<div className='module bar'>
+						<button type='button' onClick={this.roll_dice}>Roll Dice</button>
 					</div>
 
-					<div class='module'>
-						<label for='result'>Result:</label>
-						<output for='dice'>hello world</output>
+					<div className='module'>
+						<label htmlFor='result'>Result:</label>
+						<output htmlFor='dice'>hello world</output>
 					</div>
 				</form>
 			</div>
