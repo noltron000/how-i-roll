@@ -1,5 +1,5 @@
 # Project Proposal
-> **Goal:** Create an open-source dice-roller application, using Agile Development techniques.<br />
+> **Objective:** Create an open-source dice-roller application, using Agile Development techniques.<br />
 > **Challenge:** Make it better than those that already exist on the web.
 
 A dice-roller application starts simple in scope, yet many interesting features can be built on
@@ -13,6 +13,65 @@ There are plenty of apps like this that exist, but none of them are particularly
 - [Some results](http://a.teall.info/dice/) are quite interesting, but are not the most intuitive.
 - [More in-depth products](https://roll20.net/) lack ease-of-use and accessibility.
 
+## Objectives
+*This section is dedicated to the objectives themselves rather than the version system. The version system is outlined at the bottom of this page.*
+
+### 1. Ship an MVP to Heroku
+> [ ] in progress<br />
+> timeline: 1 day (due monday night)
+
+1. Attain `v0.1: MVP` status
+1. A person should be able to simulate a basic dice roll with the web app.
+1. Completing the MVP early will pave the road to success.
+	- Further scoping mechinsims will be similarly small and digestable.
+	- This scoping system adheres to Agile Development practices.
+1. The completion this objective will be marked with a live &amp; functioning heroku app.
+
+### 2. Conduct User Testing
+> [ ] to do<br />
+> timeline: 1 day (due tuesday night)
+
+1. Create wireframes
+1. Conduct user testing
+	- Doing this will uncover unseen obstacles and features.
+	- It will improve the product experience in the end.
+	- Cycle through this and wireframing several times.
+1. Now, there should be enough information to add additional basic features
+	- this step will not be well outlined until `v0.2: extra features` is defined.
+1. Write user stories
+1. Once these are implemented and functioning, they should be pushed to `master`.
+
+### 3. Improve User Experience
+> [ ] to do<br />
+> timeline: 1 days (due wednesday night)
+
+1. Create a Progressive Web App*
+	- A Progressive Web App is a standard to obsolete native phone apps, unifying phones with the web.
+1. Focus on frontend and UX
+1. Improve flow and beauty
+1. Reduce page loads
+1. Improve code; adhere to airbnb style guide
+1. Decide fonts, colors, and initial logo
+1. Once all these things are done, there should be a significant visual improvement from the previous version.
+	- User interviews should be mostly positive now
+	- People should agree that the new version, `v0.3: better UX`, is far more impressive than previous iterations.
+
+## Project Timeline
+- [ ] monday 3/18
+	- submit proposal
+	- create mvp
+- [ ] Tuesday 3/19
+	- user interviews
+	- add extra features
+- [ ] wednesday 3/20
+	- create slide deck
+	- improve codebase
+	- refactor
+	- beautify frontend
+- [ ] thursday 3/21
+	- pitch app
+	- live demo
+	- further scoping plans
 
 ## Project Scope
 This project has a week to be completed. Because of this, careful scoping mechanisms have been put in place.
@@ -32,7 +91,7 @@ The components for this version will be limited. Just three elements are needed:
 
 #### Program Functionality
 At this point, the app needs only to "roll
-" `X` dice with each die having `Y` sides. A user inputs `XdY` into a textbox, where `X` and `Y` are positive integers, then clicks the roll button.
+" `X` dice with each die having `Y` sides. A person inputs `XdY` into a textbox, where `X` and `Y` are positive integers, then clicks the roll button.
 
 <!-- The notation is common among the RPG community and therefore is upheld within this app. -->
 
