@@ -17,7 +17,7 @@ There are plenty of apps like this that exist, but none of them are particularly
 *This section is dedicated to the objectives themselves rather than the version system. The version system is outlined at the bottom of this page.*
 
 ### 1. Ship an MVP to Heroku
-> [ ] in progress<br />
+> - [ ] in progress<br />
 > timeline: 1 day (due monday night)
 
 1. Attain `v0.1: MVP` status
@@ -28,7 +28,7 @@ There are plenty of apps like this that exist, but none of them are particularly
 1. The completion this objective will be marked with a live &amp; functioning heroku app.
 
 ### 2. Conduct User Testing
-> [ ] to do<br />
+> - [ ] to do<br />
 > timeline: 1 day (due tuesday night)
 
 1. Create wireframes
@@ -42,7 +42,7 @@ There are plenty of apps like this that exist, but none of them are particularly
 1. Once these are implemented and functioning, they should be pushed to `master`.
 
 ### 3. Improve User Experience
-> [ ] to do<br />
+> - [ ] to do<br />
 > timeline: 1 days (due wednesday night)
 
 1. Create a Progressive Web App*
