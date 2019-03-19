@@ -3,79 +3,72 @@ import '../css/app.css';
 
 class App extends Component {
 	state = {
-		input: '',
-		output: '',
+		inputText: '',
+		output: 0,
 	};
 
-	update_input = (value) => {
+	update_input_text = (value) => {
 		this.setState({
-			input: value
+			inputText: value
 		})
 	}
 
+	// parse_dice converts XdY to an object
 	parse_dice = () => {
-		// console.log(this.state.input)
-
+		// initialize variables
+		const { inputText } = this.state
 		let diceNum = ''
 		let diceSize = ''
-		let error = null
 		let passType = false
 
-		for (let char of this.state.input) {
-			// console.log('=====')
-			// console.log('your char:', char)
+		// iterate through string in state
+		for (let char of inputText) {
+
+			// change passtype on 'd'
 			if (char === 'd' && !passType) {
 				passType = true
+
+			// this is checking if the char string is in 0123456789
+			} else if(char >= '0' && char <= '9') {
+
+				// passtype dictates wheter to append size or num
+				if (passType) {
+					diceSize += char
+				} else {
+					diceNum += char
+				}
+
+			// something broke!
 			} else {
-				let found = false
-				for(let num of "0123456789") {
-					if(char === num) {
-						if (passType) {
-							diceSize += char
-						} else {
-							diceNum += char
-						}
-						found = true
-						break
-					}
-				}
-				if (!found) {
-					error = 'ERROR!'
-				}
+				console.error("invalid input")
 			}
 		}
-		if (!passType) {
-			error = 'ERROR!'
-		}
-		// console.log("diceNum:", diceNum)
-		// console.log("diceSize:", diceSize)
-		return { diceNum, diceSize, error }
+
+		// extract integers and return
+		diceNum = parseInt(diceNum)
+		diceSize = parseInt(diceSize)
+		return { diceNum, diceSize }
 	}
 
-	randomize = (obj) => {
-		// console.log('getting started')
-		let diceNum = obj.diceNum
-		let diceSize = obj.diceSize
-		let error = obj.error
-
+	randomize_dice = (dice) => {
+		// takes in a dice object
+		let { diceNum, diceSize } = dice
 		let counter = 0
-		let result = 0
-		// console.log(error)
-		if(!error) {
-			// console.log(diceNum)
-			while(counter < parseFloat(diceNum)) {
-				let diceRoll = Math.floor(Math.random() * parseFloat(diceSize)+1)
-				// console.log(diceRoll)
-				result += diceRoll
-				counter++
-			}
+		let total = 0
+
+		// roll each die once
+		while(counter < diceNum) {
+			const diceRoll = Math.floor(Math.random() * diceSize + 1)
+			total += diceRoll
+			counter++
 		}
 
-		return {result, error}
+		// return total integer
+		return total
 	}
 
 	roll_dice = (obj) => {
-		let result = this.randomize(this.parse_dice()).result
+		let result = this.randomize_dice(this.parse_dice()).result
 		this.setState({output: result})
 	}
 
@@ -90,8 +83,8 @@ class App extends Component {
 							type='text'
 							name='dice'
 							id='dice'
-							value={this.input}
-							onChange={(e) => this.update_input(e.target.value)}
+							value={this.inputText}
+							onChange={(element) => this.update_input_text(element.target.value)}
 						></textarea>
 					</div>
 
