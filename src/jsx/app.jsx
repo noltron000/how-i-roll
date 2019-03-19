@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
 import '../css/app.css';
+
+import Footer from '../jsx/footer.jsx'
 
 class App extends Component {
 	state = {
@@ -7,6 +10,7 @@ class App extends Component {
 		rollResult: 0,
 	};
 
+	// update state when dice textarea changes
 	update_input_text = (data) => {
 		this.setState({
 			inputText: data
@@ -38,7 +42,6 @@ class App extends Component {
 					diceNum += char
 				}
 
-			// something broke!
 			} else {
 				console.error("invalid input")
 			}
@@ -50,9 +53,9 @@ class App extends Component {
 		return { diceNum, diceSize }
 	}
 
-	randomize_dice = (dice) => {
+	randomize_dice = (diceObj) => {
 		// takes in a dice object
-		let { diceNum, diceSize } = dice
+		let { diceNum, diceSize } = diceObj
 		let counter = 0
 		let total = 0
 
@@ -72,21 +75,11 @@ class App extends Component {
 		this.setState({rollResult: total})
 	}
 
+	// render HTML output
 	render() {
 		return (
 			<div>
 				<h1>How I Roll</h1>
-				<div className='module'>
-					<label htmlFor='dice'>Input Dice:</label>
-					<textarea
-						type='text'
-						name='dice'
-						id='dice'
-						value={this.inputText}
-						onChange={(element) => this.update_input_text(element.target.value)}
-					></textarea>
-				</div>
-
 				<div className='module bar'>
 					<button type='button' onClick={this.roll_dice}>Roll Dice</button>
 				</div>
@@ -95,6 +88,8 @@ class App extends Component {
 					<label htmlFor='result'>Result:</label>
 					<output htmlFor='dice' value=''>{this.state.rollResult}</output>
 				</div>
+
+				<Footer update_input_text={this.update_input_text} />
 			</div>
 		);
 	}
