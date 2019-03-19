@@ -76,27 +76,25 @@ class App extends Component {
 		return (
 			<div>
 				<h1>How I Roll</h1>
-				<form action='/roll' method='GET'>
-					<div className='module'>
-						<label htmlFor='dice'>Input Dice:</label>
-						<textarea
-							type='text'
-							name='dice'
-							id='dice'
-							value={this.inputText}
-							onChange={(element) => this.update_input_text(element.target.value)}
-						></textarea>
-					</div>
+				<div className='module'>
+					<label htmlFor='dice'>Input Dice:</label>
+					<textarea
+						type='text'
+						name='dice'
+						id='dice'
+						value={this.inputText}
+						onChange={(element) => this.update_input_text(element.target.value)}
+					></textarea>
+				</div>
 
-					<div className='module bar'>
-						<button type='button' onClick={this.roll_dice}>Roll Dice</button>
-					</div>
+				<div className='module bar'>
+					<button type='button' onClick={this.roll_dice}>Roll Dice</button>
+				</div>
 
-					<div className='module'>
-						<label htmlFor='result'>Result:</label>
-						<output htmlFor='dice' value=''>{this.state.rollResult}</output>
-					</div>
-				</form>
+				<div className='module'>
+					<label htmlFor='result'>Result:</label>
+					<output htmlFor='dice' value=''>{this.state.rollResult}</output>
+				</div>
 			</div>
 		);
 	}
