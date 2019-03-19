@@ -4,12 +4,12 @@ import '../css/app.css';
 class App extends Component {
 	state = {
 		inputText: '',
-		output: 0,
+		rollResult: 0,
 	};
 
-	update_input_text = (value) => {
+	update_input_text = (data) => {
 		this.setState({
-			inputText: value
+			inputText: data
 		})
 	}
 
@@ -67,9 +67,9 @@ class App extends Component {
 		return total
 	}
 
-	roll_dice = (obj) => {
-		let result = this.randomize_dice(this.parse_dice()).result
-		this.setState({output: result})
+	roll_dice = () => {
+		let total = this.randomize_dice(this.parse_dice())
+		this.setState({rollResult: total})
 	}
 
 	render() {
@@ -94,7 +94,7 @@ class App extends Component {
 
 					<div className='module'>
 						<label htmlFor='result'>Result:</label>
-						<output htmlFor='dice' value=''>{this.state.output}</output>
+						<output htmlFor='dice' value=''>{this.state.rollResult}</output>
 					</div>
 				</form>
 			</div>
