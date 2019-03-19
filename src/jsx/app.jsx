@@ -14,7 +14,7 @@ class App extends Component {
 	}
 
 	parse_dice = () => {
-		console.log(this.state.input)
+		// console.log(this.state.input)
 
 		let diceNum = ''
 		let diceSize = ''
@@ -22,8 +22,8 @@ class App extends Component {
 		let passType = false
 
 		for (let char of this.state.input) {
-			console.log('=====')
-			console.log('your char:', char)
+			// console.log('=====')
+			// console.log('your char:', char)
 			if (char === 'd' && !passType) {
 				passType = true
 			} else {
@@ -47,25 +47,25 @@ class App extends Component {
 		if (!passType) {
 			error = 'ERROR!'
 		}
-		console.log("diceNum:", diceNum)
-		console.log("diceSize:", diceSize)
+		// console.log("diceNum:", diceNum)
+		// console.log("diceSize:", diceSize)
 		return { diceNum, diceSize, error }
 	}
 
 	randomize = (obj) => {
-		console.log('getting started')
+		// console.log('getting started')
 		let diceNum = obj.diceNum
 		let diceSize = obj.diceSize
 		let error = obj.error
 
 		let counter = 0
 		let result = 0
-		console.log(error)
+		// console.log(error)
 		if(!error) {
-			console.log(diceNum)
+			// console.log(diceNum)
 			while(counter < parseFloat(diceNum)) {
 				let diceRoll = Math.floor(Math.random() * parseFloat(diceSize)+1)
-				console.log(diceRoll)
+				// console.log(diceRoll)
 				result += diceRoll
 				counter++
 			}
