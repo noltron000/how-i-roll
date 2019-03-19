@@ -12,6 +12,7 @@ output {
 }
 
 .module {
+	background: red;
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
