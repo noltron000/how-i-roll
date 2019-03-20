@@ -7,7 +7,7 @@ import Interface from '../jsx/interface.jsx'
 
 class App extends Component {
 	state = {
-		inputText: '',
+		inputDice: {},
 		rollResult: 0,
 	};
 
@@ -19,15 +19,14 @@ class App extends Component {
 	}
 
 	// parse_dice converts XdY to an object
-	parse_dice = () => {
+	parse_dice = (diceStr) => {
 		// initialize variables
-		const { inputText } = this.state
 		let diceNum = ''
 		let diceSize = ''
 		let passType = false
 
 		// iterate through string in state
-		for (let char of inputText) {
+		for (const char of diceStr) {
 
 			// change passtype on 'd'
 			if (char === 'd' && !passType) {
@@ -72,7 +71,13 @@ class App extends Component {
 	}
 
 	roll_dice = () => {
-		let total = this.randomize_dice(this.parse_dice())
+		const {inputDice} = this.state
+		let total = 0
+		for(const diceSize in inputDice) {
+			const diceNum = inputDice[diceSize]
+			const diceObj = {diceNum, diceSize}
+			total += this.randomize_dice(diceObj)
+		}
 		this.setState({rollResult: total})
 	}
 
@@ -102,7 +107,7 @@ class App extends Component {
 				</section>
 
 				<section id='interface'>
-					<Interface />
+					<Interface inputDice={this.state.inputDice} />
 				</section>
 
 					{/* <label htmlFor='dice-box'>Input Dice:</label>
