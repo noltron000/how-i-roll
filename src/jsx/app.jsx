@@ -80,18 +80,20 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<section id='interface'>
+				<section id='display'>
 					<div id='overlay'>
 						<header id='title-header'>
-							<h3>Header</h3>
+							<img id='info' alt='more info...' src={info_icon} />
+							<h1 id='title'>How I Roll</h1>
 						</header>
 
 						<div id='button-container'>
-							<button>Button</button>
+							<button id='roll-button' onClick={this.roll_dice}>Roll Dice</button>
 						</div>
 
 						<div id='results-bar'>
-							<h1>Big<br/>Footer</h1>
+							<label htmlFor='output-box'><h2>Result:</h2></label>
+							<output id='output-box' htmlFor='dice-box' value=''>{this.state.rollResult}</output>
 						</div>
 					</div>
 
@@ -99,28 +101,7 @@ class App extends Component {
 					</div>
 				</section>
 
-
-
-				{/* <section id='overlay'>
-					<div id='windowsill'>
-						<header className='bar'>
-							<img id='info' alt='more info...' src={info_icon} />
-							<h1 id='title'>How I Roll</h1>
-						</header>
-
-						<div id='result'>
-							<label htmlFor='output-box'>Result:</label>
-							<output id='output-box' htmlFor='dice-box' value=''>{this.state.rollResult}</output>
-						</div>
-					</div>
-
-					<div id='button-body'>
-						<button type='button' onClick={this.roll_dice}>Roll Dice</button>
-					</div>
-
-				</section> */}
-
-				{/* <div id='interface' className='module'>
+				<section id='interface'>
 					<label htmlFor='dice-box'>Input Dice:</label>
 					<textarea
 						type='text'
@@ -129,11 +110,8 @@ class App extends Component {
 						value={this.inputText}
 						onChange={(element) => this.update_input_text(element.target.value)}
 					></textarea>
-				</div>
+				</section>
 
-				<footer>
-					testing...
-				</footer> */}
 				{/* <Interface
 					update_input_text={this.update_input_text}
 					rollResult={this.state.rollResult}

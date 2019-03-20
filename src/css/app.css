@@ -11,10 +11,12 @@ output {
 	font-family: monospace;
 }
 
+/* BIG PICTURE ITEMS FIRST */
 
-/* interface css */
+/* display css */
 
-#interface {
+#display {
+	color: white;
 	height: 70vh;
 }
 
@@ -28,6 +30,7 @@ output {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	text-align: center;
 }
 
 
@@ -44,8 +47,52 @@ output {
 
 #dice-tray {
 	height: inherit;
-	background-color: #2a17ff;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2353d8ff'/%3E%3Cstop offset='1' stop-color='%2353d8ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%236f3bff'/%3E%3Cstop offset='1' stop-color='%236f3bff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2377c7ff'/%3E%3Cstop offset='1' stop-color='%2377c7ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232a17ff'/%3E%3Cstop offset='1' stop-color='%232a17ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%238fffb8'/%3E%3Cstop offset='1' stop-color='%238fffb8' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23a75eff'/%3E%3Cstop offset='1' stop-color='%23a75eff' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+	background-color: #280855;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23280855' cx='50' cy='0' r='50'/%3E%3Cg fill='%23360557' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23420258' cx='50' cy='100' r='50'/%3E%3Cg fill='%234e0059' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%235a0059' cx='50' cy='200' r='50'/%3E%3Cg fill='%23650059' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f0059' cx='50' cy='300' r='50'/%3E%3Cg fill='%23790058' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23830056' cx='50' cy='400' r='50'/%3E%3Cg fill='%238d0054' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23960052' cx='50' cy='500' r='50'/%3E%3Cg fill='%239e0050' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a6004d' cx='50' cy='600' r='50'/%3E%3Cg fill='%23ae044a' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b51147' cx='50' cy='700' r='50'/%3E%3Cg fill='%23bb1c44' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c12640' cx='50' cy='800' r='50'/%3E%3Cg fill='%23c72f3c' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23cc3938' cx='50' cy='900' r='50'/%3E%3Cg fill='%23d04234' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d44b2f' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
 	background-attachment: fixed;
-	background-size: cover;
+	background-size: contain;
+}
+
+/* NEXT THE MORE NITPICKY THINGS */
+
+/* title header */
+
+#title-header {
+	height: 64px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+#info {
+	position: absolute;
+	left: 0px;
+	width: 48px;
+	height: 48px;
+	padding: 8px;
+	opacity: 0.5;
+}
+
+#info:hover {
+	opacity: 1;
+}
+
+#info:active {
+	filter: drop-shadow(0 0 3px white)
+}
+
+/* button */
+
+#roll-button {
+	font-size: 1em;
+	border-radius: 0.5em;
+	border-width: 0.25em;
+	padding: 0.25em 1em;
+}
+
+/* results bar */
+
+#output-box {
+	font-size: 3em;
 }
