@@ -6,10 +6,19 @@ class InDice extends Component {
 			<div className='dice-module'>
 				{/* <button className='increment-dice'>+</button> */}
 				<span />
-				<img className='dice-icon' alt={this.props.sides + ' sided die'} src={this.props.source} />
+				<label className='icon-label' htmlFor={'d'+this.props.sides}>
+					<img className='dice-icon' alt={this.props.sides + ' sided die'} src={this.props.source} />
+				</label>
 				<span />
 				{/* <button className='increment-dice'>&minus;</button> */}
-				<input className='dice-input' type='number' min='0' max='999'/>
+				<input
+					id={'d'+this.props.sides}
+					className='dice-input'
+					type='number'
+					min='0'
+					max='999'
+					value={this.props.inputDice[this.props.sides]}
+					onChange={(element) => this.props.update_dice(element.target.value, this.props.sides)} />
 			</div>
 		)
 	}

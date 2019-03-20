@@ -25,3 +25,9 @@
 	padding-top: 4px;
 	padding-bottom: 4px;
 }
+
+.icon-label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

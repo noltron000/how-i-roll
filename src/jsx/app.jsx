@@ -11,11 +11,15 @@ class App extends Component {
 		rollResult: 0,
 	};
 
+
 	// update state when dice textarea changes
-	update_input_text = (data) => {
-		this.setState({
-			inputText: data
-		})
+	update_dice = (diceNum, diceSize) => {
+		console.log(this.state.inputDice)
+		// this.setState({inputDice[diceSize]: diceNum})
+		this.setState({ inputDice: {
+			...this.state.inputDice,
+			[diceSize]: diceNum,
+		}})
 	}
 
 	// parse_dice converts XdY to an object
@@ -107,7 +111,7 @@ class App extends Component {
 				</section>
 
 				<section id='interface'>
-					<Interface inputDice={this.state.inputDice} />
+					<Interface update_dice={this.update_dice} inputDice={this.state.inputDice} />
 				</section>
 
 					{/* <label htmlFor='dice-box'>Input Dice:</label>
