@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
+import info_icon from '../img/iconmonstr-info-6-icon.svg'
 import '../css/app.css';
 
-import Footer from '../jsx/footer.jsx'
+// import Interface from '../jsx/interface.jsx'
 
 class App extends Component {
 	state = {
@@ -79,17 +80,42 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<h1>How I Roll</h1>
-				<div className='module bar'>
-					<button type='button' onClick={this.roll_dice}>Roll Dice</button>
-				</div>
+				<section id='display'>
+					<div id='overlay'>
+						<header id='title-header'>
+							<img id='info' alt='more info...' src={info_icon} />
+							<h1 id='title'>How I Roll</h1>
+						</header>
 
-				<div className='module'>
-					<label htmlFor='result'>Result:</label>
-					<output htmlFor='dice-box' value=''>{this.state.rollResult}</output>
-				</div>
+						<div id='button-container'>
+							<button id='roll-button' onClick={this.roll_dice}>Roll Dice</button>
+						</div>
 
-				<Footer update_input_text={this.update_input_text} />
+						<div id='results-bar'>
+							<label htmlFor='output-box'><h2>Result:</h2></label>
+							<output id='output-box' htmlFor='dice-box' value=''>{this.state.rollResult}</output>
+						</div>
+					</div>
+
+					<div id='dice-tray'>
+					</div>
+				</section>
+
+				<section id='interface'>
+					<label htmlFor='dice-box'>Input Dice:</label>
+					<textarea
+						type='text'
+						name='dice-box'
+						id='dice-box'
+						value={this.inputText}
+						onChange={(element) => this.update_input_text(element.target.value)}
+					></textarea>
+				</section>
+
+				{/* <Interface
+					update_input_text={this.update_input_text}
+					rollResult={this.state.rollResult}
+				/> */}
 			</div>
 		);
 	}
