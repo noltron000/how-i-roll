@@ -18,7 +18,7 @@ class App extends Component {
 		// this.setState({inputDice[diceSize]: diceNum})
 		this.setState({ inputDice: {
 			...this.state.inputDice,
-			[diceSize]: diceNum,
+			[diceSize]: parseInt(diceNum),
 		}})
 	}
 
