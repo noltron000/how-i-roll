@@ -11,15 +11,88 @@ output {
 	font-family: monospace;
 }
 
-.module {
-	margin-top: 1em;
-	margin-bottom: 1em;
+/* BIG PICTURE ITEMS FIRST */
+
+/* display css */
+
+#display {
+	color: white;
+	height: 70vh;
 }
 
-.bar {
+/* overlay css */
+
+#overlay {
+	height: inherit;
+	width: 100vw;
+	position: absolute;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
-	align-content: flex-start;
-	align-self: flex-start;
+	align-items: center;
+	text-align: center;
+}
+
+
+#button-container {
+	height: inherit;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+}
+
+/* dice-tray css */
+
+#dice-tray {
+	height: inherit;
+	background-color: #280855;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23280855' cx='50' cy='0' r='50'/%3E%3Cg fill='%23360557' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23420258' cx='50' cy='100' r='50'/%3E%3Cg fill='%234e0059' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%235a0059' cx='50' cy='200' r='50'/%3E%3Cg fill='%23650059' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f0059' cx='50' cy='300' r='50'/%3E%3Cg fill='%23790058' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23830056' cx='50' cy='400' r='50'/%3E%3Cg fill='%238d0054' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23960052' cx='50' cy='500' r='50'/%3E%3Cg fill='%239e0050' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a6004d' cx='50' cy='600' r='50'/%3E%3Cg fill='%23ae044a' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b51147' cx='50' cy='700' r='50'/%3E%3Cg fill='%23bb1c44' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c12640' cx='50' cy='800' r='50'/%3E%3Cg fill='%23c72f3c' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23cc3938' cx='50' cy='900' r='50'/%3E%3Cg fill='%23d04234' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d44b2f' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+	background-size: contain;
+}
+
+/* NEXT THE MORE NITPICKY THINGS */
+
+/* title header */
+
+#title-header {
+	height: 64px;
+	display: flex;
 	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+#info {
+	position: absolute;
+	left: 0px;
+	width: 48px;
+	height: 48px;
+	padding: 8px;
+	opacity: 0.5;
+}
+
+#info:hover {
+	opacity: 1;
+}
+
+#info:active {
+	filter: drop-shadow(0 0 3px white)
+}
+
+/* button */
+
+#roll-button {
+	font-size: 1em;
+	border-radius: 0.5em;
+	border-width: 0.25em;
+	padding: 0.25em 1em;
+}
+
+/* results bar */
+
+#output-box {
+	font-size: 3em;
 }

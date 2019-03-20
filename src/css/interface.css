@@ -1,0 +1,17 @@
+
+#interface {
+	position: absolute;
+	top: 90vh;
+	height: 10vh;
+	width: 100vw;
+	background: orange;
+}
+
+#dice-box {
+	width: calc(100% - 6px);
+	height: fit-content
+}
+
+img {
+	height: 50px;
+}
