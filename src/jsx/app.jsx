@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
+import info_icon from '../img/iconmonstr-info-6-icon.svg'
 import '../css/app.css';
 
-import Footer from '../jsx/footer.jsx'
+// import Interface from '../jsx/interface.jsx'
 
 class App extends Component {
 	state = {
@@ -79,17 +80,64 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<h1>How I Roll</h1>
-				<div className='module bar'>
-					<button type='button' onClick={this.roll_dice}>Roll Dice</button>
+				<section id='interface'>
+					<div id='overlay'>
+						<header id='title-header'>
+							<h3>Header</h3>
+						</header>
+
+						<div id='button-container'>
+							<button>Button</button>
+						</div>
+
+						<div id='results-bar'>
+							<h1>Big<br/>Footer</h1>
+						</div>
+					</div>
+
+					<div id='dice-tray'>
+					</div>
+				</section>
+
+
+
+				{/* <section id='overlay'>
+					<div id='windowsill'>
+						<header className='bar'>
+							<img id='info' alt='more info...' src={info_icon} />
+							<h1 id='title'>How I Roll</h1>
+						</header>
+
+						<div id='result'>
+							<label htmlFor='output-box'>Result:</label>
+							<output id='output-box' htmlFor='dice-box' value=''>{this.state.rollResult}</output>
+						</div>
+					</div>
+
+					<div id='button-body'>
+						<button type='button' onClick={this.roll_dice}>Roll Dice</button>
+					</div>
+
+				</section> */}
+
+				{/* <div id='interface' className='module'>
+					<label htmlFor='dice-box'>Input Dice:</label>
+					<textarea
+						type='text'
+						name='dice-box'
+						id='dice-box'
+						value={this.inputText}
+						onChange={(element) => this.update_input_text(element.target.value)}
+					></textarea>
 				</div>
 
-				<div className='module'>
-					<label htmlFor='result'>Result:</label>
-					<output htmlFor='dice-box' value=''>{this.state.rollResult}</output>
-				</div>
-
-				<Footer update_input_text={this.update_input_text} />
+				<footer>
+					testing...
+				</footer> */}
+				{/* <Interface
+					update_input_text={this.update_input_text}
+					rollResult={this.state.rollResult}
+				/> */}
 			</div>
 		);
 	}
