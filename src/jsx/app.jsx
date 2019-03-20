@@ -14,12 +14,20 @@ class App extends Component {
 
 	// update state when dice textarea changes
 	update_dice = (diceNum, diceSize) => {
-		console.log(this.state.inputDice)
-		// this.setState({inputDice[diceSize]: diceNum})
-		this.setState({ inputDice: {
-			...this.state.inputDice,
-			[diceSize]: parseInt(diceNum),
-		}})
+		// need to make sure input is an integer
+		if (!isNaN(parseInt(diceNum))) {
+			// if it is, we expand the object and add a new item
+			this.setState({
+				inputDice: {
+					...this.state.inputDice,
+					[diceSize]: parseInt(diceNum),
+				}
+			})
+		} else if (diceNum === '') {
+			console.warn('Deleting final character results in empty string. Empty string is not a number, so its invalidated.\nThis is a bug! You should be able to delete the number!')
+			// TODO: Fix that bug!
+			// TODO: When there is nothing left, remove the key from the inputDice object.
+		}
 	}
 
 	// parse_dice converts XdY to an object
