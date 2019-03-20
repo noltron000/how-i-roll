@@ -79,7 +79,7 @@ class App extends Component {
 	// render HTML output
 	render() {
 		return (
-			<div>
+			<div id='main-screen'>
 				<section id='display'>
 					<div id='overlay'>
 						<header id='title-header'>
