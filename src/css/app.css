@@ -11,12 +11,24 @@ output {
 	font-family: monospace;
 }
 
+h1, h2, h3, h4, h5, h6,
+p, a {
+	margin: 0;
+}
+
+button, .button {
+	border-radius: 0.5em;
+	border-width: 0.25em;
+	padding: 0.25em 1em;
+}
+
+/* DISPLAY CSS / TOP ITEMS */
 /* BIG PICTURE ITEMS FIRST */
 
 /* display css */
 
 #display {
-	color: white;
+	color: black;
 	height: calc(100vh * 5/6 - 120px);
 }
 
@@ -52,8 +64,8 @@ output {
 
 #dice-tray {
 	height: inherit;
-	background-color: #280855;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23280855' cx='50' cy='0' r='50'/%3E%3Cg fill='%23360557' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23420258' cx='50' cy='100' r='50'/%3E%3Cg fill='%234e0059' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%235a0059' cx='50' cy='200' r='50'/%3E%3Cg fill='%23650059' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f0059' cx='50' cy='300' r='50'/%3E%3Cg fill='%23790058' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23830056' cx='50' cy='400' r='50'/%3E%3Cg fill='%238d0054' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23960052' cx='50' cy='500' r='50'/%3E%3Cg fill='%239e0050' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a6004d' cx='50' cy='600' r='50'/%3E%3Cg fill='%23ae044a' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b51147' cx='50' cy='700' r='50'/%3E%3Cg fill='%23bb1c44' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c12640' cx='50' cy='800' r='50'/%3E%3Cg fill='%23c72f3c' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23cc3938' cx='50' cy='900' r='50'/%3E%3Cg fill='%23d04234' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d44b2f' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+	background-color: whitesmoke;
+	/* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23280855' cx='50' cy='0' r='50'/%3E%3Cg fill='%23360557' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23420258' cx='50' cy='100' r='50'/%3E%3Cg fill='%234e0059' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%235a0059' cx='50' cy='200' r='50'/%3E%3Cg fill='%23650059' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f0059' cx='50' cy='300' r='50'/%3E%3Cg fill='%23790058' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23830056' cx='50' cy='400' r='50'/%3E%3Cg fill='%238d0054' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23960052' cx='50' cy='500' r='50'/%3E%3Cg fill='%239e0050' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a6004d' cx='50' cy='600' r='50'/%3E%3Cg fill='%23ae044a' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b51147' cx='50' cy='700' r='50'/%3E%3Cg fill='%23bb1c44' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c12640' cx='50' cy='800' r='50'/%3E%3Cg fill='%23c72f3c' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23cc3938' cx='50' cy='900' r='50'/%3E%3Cg fill='%23d04234' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d44b2f' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E"); */
 	background-attachment: fixed;
 	background-size: contain;
 }
@@ -83,21 +95,24 @@ output {
 	opacity: 1;
 }
 
-#info:active {
-	filter: drop-shadow(0 0 3px white)
-}
-
 /* button */
 
 #roll-button {
 	font-size: 1em;
-	border-radius: 0.5em;
-	border-width: 0.25em;
-	padding: 0.25em 1em;
 }
 
 /* results bar */
 
 #output-box {
 	font-size: 3em;
+}
+
+/* INTERFACE CSS / BOTTOM */
+
+#interface {
+	background-color: #EEE;
+	box-shadow:
+		0vw 8px 36px black;
+	height: calc(100vh * 1/6 + 120px);
+	overflow-y: scroll;
 }

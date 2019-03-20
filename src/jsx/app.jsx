@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import info_icon from '../img/iconmonstr-info-6-icon.svg'
 import '../css/app.css';
 
-// import Interface from '../jsx/interface.jsx'
+import Interface from '../jsx/interface.jsx'
 
 class App extends Component {
 	state = {
@@ -79,7 +79,7 @@ class App extends Component {
 	// render HTML output
 	render() {
 		return (
-			<div id='main-screen'>
+			<div>
 				<section id='display'>
 					<div id='overlay'>
 						<header id='title-header'>
@@ -102,15 +102,17 @@ class App extends Component {
 				</section>
 
 				<section id='interface'>
-					<label htmlFor='dice-box'>Input Dice:</label>
+					<Interface />
+				</section>
+
+					{/* <label htmlFor='dice-box'>Input Dice:</label>
 					<textarea
 						type='text'
 						name='dice-box'
 						id='dice-box'
 						value={this.inputText}
 						onChange={(element) => this.update_input_text(element.target.value)}
-					></textarea>
-				</section>
+					></textarea> */}
 
 				{/* <Interface
 					update_input_text={this.update_input_text}
