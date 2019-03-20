@@ -24,3 +24,18 @@ output {
 	align-self: flex-start;
 	flex-direction: row;
 }
+
+/* organizational seperator */
+
+#footer {
+	position: absolute;
+	top: 90vh;
+	height: 10vh;
+	width: 100vw;
+	background: orange;
+}
+
+#dice-box {
+	width: 100%;
+	height: fit-content
+}

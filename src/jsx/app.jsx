@@ -86,7 +86,7 @@ class App extends Component {
 
 				<div className='module'>
 					<label htmlFor='result'>Result:</label>
-					<output htmlFor='dice' value=''>{this.state.rollResult}</output>
+					<output htmlFor='dice-box' value=''>{this.state.rollResult}</output>
 				</div>
 
 				<Footer update_input_text={this.update_input_text} />
