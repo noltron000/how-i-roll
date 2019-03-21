@@ -1,7 +1,10 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9932c864-6a6e-4bd2-8360-a585dc650356/deploy-status)](https://app.netlify.com/sites/how-i-roll/deploys)
 
 # Intensive Project
-This project was made for the intensive project course @ [Make School](https://make.sc/), focusing on Agile Development.
+This project was made for the intensive project course @ [Make School](https://make.sc/), focusing on my skills in three key tools:
+- Agile Development
+- Progressive Web Apps
+- React
 
 # How I Roll
 This app is "How I Roll". It's a web app that can simulate dice rolls.

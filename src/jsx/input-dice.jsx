@@ -17,7 +17,9 @@ class InDice extends Component {
 					type='number'
 					min='0'
 					max='999'
-					value={this.props.inputDice[this.props.sides]}
+					// '|| 0' in the following line sets up a default value.
+					// this is because inputDice[key] could be undefined!
+					value={this.props.inputDice[this.props.sides] || 0}
 					onChange={(element) => this.props.update_dice(element.target.value, this.props.sides)} />
 			</div>
 		)
