@@ -136,6 +136,11 @@ class App extends Component {
 			<div>
 				<section id='display'>
 					<div id='overlay'>
+						<header id='title-header'>
+							<img id='info' alt='more info...' src={info_icon} />
+							<h1 id='title'>How I Roll</h1>
+						</header>
+
 						<div>
 								<label htmlFor={'data-' + this.state.x}>Δx:&ensp;
 								<output id={'data-' + this.state.x}>{this.state.x}</output></label>
@@ -155,11 +160,6 @@ class App extends Component {
 								<label htmlFor={'data-' + this.state.gamma}>Δγ:&ensp;
 								<output id={'data-' + this.state.gamma}>{this.state.gamma}</output></label>
 						</div>
-						<header id='title-header'>
-							<img id='info' alt='more info...' src={info_icon} />
-							<h1 id='title'>How I Roll</h1>
-						</header>
-
 
 						{/* <div id='button-container'>
 							<button id='roll-button' onClick={this.roll_dice}>Roll Dice</button>
