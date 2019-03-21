@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import InputDice from '../jsx/input-dice.jsx'
+
+import '../css/interface.css'
 import d4 from '../img/d4.svg'
 import d6 from '../img/d6.svg'
 import d8 from '../img/d8.svg'
@@ -12,13 +15,15 @@ class Interface extends Component {
 	render() {
 		return(
 			<div id='interface'>
-				{/* <img alt='4 sided die' src={d4} />
-				<img alt='6 sided die' src={d6} />
-				<img alt='8 sided die' src={d8} />
-				<img alt='10 sided die' src={d10} />
-				<img alt='12 sided die' src={d12} />
-				<img alt='20 sided die' src={d20} />
-				<img alt='100 sided die' src={d00} /> */}
+				<div id='dice-box'>
+					<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='4' source={d4} />
+					<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='6' source={d6} />
+					<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='8' source={d8} />
+					<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='10' source={d10} />
+					<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='12' source={d12} />
+					<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='20' source={d20} />
+					<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='100' source={d00} />
+				</div>
 			</div>
 		)
 	}

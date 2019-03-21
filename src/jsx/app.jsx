@@ -1,33 +1,72 @@
 import React, { Component } from 'react';
 
-import info_icon from '../img/iconmonstr-info-6-icon.svg'
+import info_icon from '../img/info.svg'
 import '../css/app.css';
 
-// import Interface from '../jsx/interface.jsx'
+import Interface from '../jsx/interface.jsx'
 
 class App extends Component {
 	state = {
-		inputText: '',
+		inputDice: {},
 		rollResult: 0,
+		shakeAwait: false,
 	};
 
+	// adds events listener when app component initializes
+	componentDidMount = () => {
+
+		// app should only ever be initialized once, else this listener would appear in every instance
+		window.addEventListener('devicemotion', (event) => {
+			// get accelerometer and gyroscope data from device, if any
+			// see https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation
+			const { x, y, z } = event.acceleration
+			const { alpha, beta, gamma } = event.rotationRate
+
+			// check if rotation or acceleration are arbitrarily high
+			if(!this.state.shakeAwait
+			&& (Math.abs(x) + Math.abs(y) + Math.abs(z) > 30
+			|| Math.abs(alpha) + Math.abs(beta) + Math.abs(gamma)) > 1200) {
+
+				// shakeAwait enforces less function spam
+				this.setState({shakeAwait: true})
+				// shakeAwait turns off after 300ms
+				setTimeout(this.setState({shakeAwait: false}), 300);
+				// roll the dice stored in state
+				this.roll_dice()
+			}
+		});
+	}
+
 	// update state when dice textarea changes
-	update_input_text = (data) => {
-		this.setState({
-			inputText: data
-		})
+	update_dice = (diceNum, diceSize) => {
+		// need to make sure input is an integer
+		if (!isNaN(parseInt(diceNum))) {
+			// if it is, we expand the object and add a new item
+			this.setState({
+				inputDice: {
+					...this.state.inputDice,
+					[diceSize]: parseInt(diceNum, 10),
+				}
+			})
+		} else if (diceNum === '') {
+			this.setState({
+				inputDice: {
+					...this.state.inputDice,
+					[diceSize]: 0
+				}
+			})
+		}
 	}
 
 	// parse_dice converts XdY to an object
-	parse_dice = () => {
+	parse_dice = (diceStr) => {
 		// initialize variables
-		const { inputText } = this.state
 		let diceNum = ''
 		let diceSize = ''
 		let passType = false
 
 		// iterate through string in state
-		for (let char of inputText) {
+		for (const char of diceStr) {
 
 			// change passtype on 'd'
 			if (char === 'd' && !passType) {
@@ -72,7 +111,14 @@ class App extends Component {
 	}
 
 	roll_dice = () => {
-		let total = this.randomize_dice(this.parse_dice())
+		const {inputDice} = this.state
+		let total = 0
+		for(const diceSize in inputDice) {
+			const diceNum = inputDice[diceSize]
+			const diceObj = {diceNum, diceSize}
+			total += this.randomize_dice(diceObj)
+		}
+		window.navigator.vibrate(50);
 		this.setState({rollResult: total})
 	}
 
@@ -102,20 +148,8 @@ class App extends Component {
 				</section>
 
 				<section id='interface'>
-					<label htmlFor='dice-box'>Input Dice:</label>
-					<textarea
-						type='text'
-						name='dice-box'
-						id='dice-box'
-						value={this.inputText}
-						onChange={(element) => this.update_input_text(element.target.value)}
-					></textarea>
+					<Interface update_dice={this.update_dice} inputDice={this.state.inputDice} />
 				</section>
-
-				{/* <Interface
-					update_input_text={this.update_input_text}
-					rollResult={this.state.rollResult}
-				/> */}
 			</div>
 		);
 	}
