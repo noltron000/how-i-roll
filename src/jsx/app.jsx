@@ -9,6 +9,7 @@ class App extends Component {
 	state = {
 		inputDice: {},
 		rollResult: 0,
+		shakeAwait: false,
 	};
 
 	// adds a single mount event for device motion
@@ -18,8 +19,15 @@ class App extends Component {
 			const { x, y, z } = event.acceleration
 			const { alpha, beta, gamma } = event.rotationRate
 
-			if(Math.abs(x) + Math.abs(y) + Math.abs(z) > 30
-			|| Math.abs(alpha) + Math.abs(beta) + Math.abs(gamma) > 1200) {
+			if(!this.state.shakeAwait
+			&& (Math.abs(x) + Math.abs(y) + Math.abs(z) > 30
+			|| Math.abs(alpha) + Math.abs(beta) + Math.abs(gamma)) > 1200) {
+
+				this.setState({shakeAwait: true})
+				setTimeout(() => {
+					this.setState({shakeAwait: false})
+				}, 300);
+
 				this.roll_dice()
 			}
 		});
