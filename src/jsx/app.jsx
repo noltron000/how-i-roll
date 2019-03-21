@@ -122,19 +122,6 @@ class App extends Component {
 					<Interface update_dice={this.update_dice} inputDice={this.state.inputDice} />
 				</section>
 
-					{/* <label htmlFor='dice-box'>Input Dice:</label>
-					<textarea
-						type='text'
-						name='dice-box'
-						id='dice-box'
-						value={this.inputText}
-						onChange={(element) => this.update_input_text(element.target.value)}
-					></textarea> */}
-
-				{/* <Interface
-					update_input_text={this.update_input_text}
-					rollResult={this.state.rollResult}
-				/> */}
 			</div>
 		);
 	}
