@@ -12,6 +12,7 @@ class App extends Component {
 	};
 
 	// adds a single mount event for device motion
+	// see https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation
 	componentDidMount = () => {
 		window.addEventListener('devicemotion', (event) => {
 			const { x, y, z } = event.acceleration
