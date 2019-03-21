@@ -7,6 +7,10 @@ textarea {
 	display: block;
 }
 
+label + output {
+	display: inline-block;
+}
+
 output {
 	font-family: monospace;
 }

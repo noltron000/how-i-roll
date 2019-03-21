@@ -10,6 +10,13 @@ class App extends Component {
 		inputDice: {},
 		rollResult: 0,
 		shakeAwait: false,
+		x: 0,
+		y: 0,
+		z: 0,
+		alpha: 0,
+		beta: 0,
+		gamma: 0,
+
 	};
 
 	// adds a single mount event for device motion
@@ -18,6 +25,13 @@ class App extends Component {
 		window.addEventListener('devicemotion', (event) => {
 			const { x, y, z } = event.acceleration
 			const { alpha, beta, gamma } = event.rotationRate
+
+			if(Math.abs(x) > Math.abs(this.state.x)) { this.setState({ x: x }) }
+			if(Math.abs(y) > Math.abs(this.state.y)) { this.setState({ y: y }) }
+			if(Math.abs(z) > Math.abs(this.state.z)) { this.setState({ z: z }) }
+			if(Math.abs(alpha) > Math.abs(this.state.alpha)) { this.setState({ alpha: alpha }) }
+			if(Math.abs(beta) > Math.abs(this.state.beta)) { this.setState({ beta: beta }) }
+			if(Math.abs(gamma) > Math.abs(this.state.gamma)) { this.setState({ gamma: gamma }) }
 
 			if(!this.state.shakeAwait
 			&& (Math.abs(x) + Math.abs(y) + Math.abs(z) > 30
@@ -122,10 +136,30 @@ class App extends Component {
 			<div>
 				<section id='display'>
 					<div id='overlay'>
+						<div>
+								<label htmlFor={'data-' + this.state.x}>Δx:&ensp;
+								<output id={'data-' + this.state.x}>{this.state.x}</output></label>
+
+								<label htmlFor={'data-' + this.state.y}>Δy:&ensp;
+								<output id={'data-' + this.state.y}>{this.state.y}</output></label>
+
+								<label htmlFor={'data-' + this.state.z}>Δz:&ensp;
+								<output id={'data-' + this.state.z}>{this.state.z}</output></label>
+
+								<label htmlFor={'data-' + this.state.alpha}>Δα:&ensp;
+								<output id={'data-' + this.state.alpha}>{this.state.alpha}</output></label>
+
+								<label htmlFor={'data-' + this.state.beta}>Δβ:&ensp;
+								<output id={'data-' + this.state.beta}>{this.state.beta}</output></label>
+
+								<label htmlFor={'data-' + this.state.gamma}>Δγ:&ensp;
+								<output id={'data-' + this.state.gamma}>{this.state.gamma}</output></label>
+						</div>
 						<header id='title-header'>
 							<img id='info' alt='more info...' src={info_icon} />
 							<h1 id='title'>How I Roll</h1>
 						</header>
+
 
 						<div id='button-container'>
 							<button id='roll-button' onClick={this.roll_dice}>Roll Dice</button>
