@@ -11,6 +11,7 @@ This app is "How I Roll". It's a web app that can simulate dice rolls.
 > ***Links for Your Convenience:***
 > - [Project Proposal](https://github.com/noltron000/how-i-roll/blob/master/PROPOSAL.md)
 > - [Open Source License](https://github.com/noltron000/how-i-roll/blob/master/LICENSE.md)
+> - [Live App on Netlify](https://how-i-roll.netlify.com/)
 
 ## Sources
 1. [Wikipedia](https://en.wikipedia.org/wiki/Dice_notation)
