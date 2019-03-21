@@ -13,5 +13,24 @@ This app is "How I Roll". It's a web app that can simulate dice rolls.
 > - [Open Source License](https://github.com/noltron000/how-i-roll/blob/master/LICENSE.md)
 > - [Live App on Netlify](https://how-i-roll.netlify.com/)
 
+## Another Dice App!?
+There are plenty of dice apps out there already - on the web, the app store, the play store...(and yes &mdash; even the microsoft store.) So why do we need *yet another*?
+
+- [x] Open Source!
+- [x] Online accessible
+- [ ] Progressive Web App
+- [ ] On the Google Play Store
+- [ ] 3D Dice
+- [ ] Favorite dice rolls
+- Mobile integration
+	- [x] shake to roll
+	- [x] swipe to roll
+- Powerful dice features
+	- [ ] drop n lowest/highest
+	- [ ] roll XdY dice Z times
+	- [ ] explode dice on crit
+	- [ ] add modifiers
+	- [ ] arbitrary dice sizes
+
 ## Sources
 1. [Wikipedia](https://en.wikipedia.org/wiki/Dice_notation)
