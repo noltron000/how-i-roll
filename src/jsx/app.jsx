@@ -45,7 +45,7 @@ class App extends Component {
 			this.setState({
 				inputDice: {
 					...this.state.inputDice,
-					[diceSize]: parseInt(diceNum),
+					[diceSize]: parseInt(diceNum, 10),
 				}
 			})
 		} else if (diceNum === '') {
@@ -150,7 +150,6 @@ class App extends Component {
 				<section id='interface'>
 					<Interface update_dice={this.update_dice} inputDice={this.state.inputDice} />
 				</section>
-
 			</div>
 		);
 	}
