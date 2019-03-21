@@ -12,27 +12,30 @@ class App extends Component {
 		shakeAwait: false,
 	};
 
-	// adds a single mount event for device motion
-	// see https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation
+	// adds events listener when app component initializes
 	componentDidMount = () => {
+
+		// app should only ever be initialized once, else this listener would appear in every instance
 		window.addEventListener('devicemotion', (event) => {
+			// get accelerometer and gyroscope data from device, if any
+			// see https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation
 			const { x, y, z } = event.acceleration
 			const { alpha, beta, gamma } = event.rotationRate
 
+			// check if rotation or acceleration are arbitrarily high
 			if(!this.state.shakeAwait
 			&& (Math.abs(x) + Math.abs(y) + Math.abs(z) > 30
 			|| Math.abs(alpha) + Math.abs(beta) + Math.abs(gamma)) > 1200) {
 
+				// shakeAwait enforces less function spam
 				this.setState({shakeAwait: true})
-				setTimeout(() => {
-					this.setState({shakeAwait: false})
-				}, 300);
-
+				// shakeAwait turns off after 300ms
+				setTimeout(this.setState({shakeAwait: false}), 300);
+				// roll the dice stored in state
 				this.roll_dice()
 			}
 		});
 	}
-
 
 	// update state when dice textarea changes
 	update_dice = (diceNum, diceSize) => {
@@ -46,9 +49,12 @@ class App extends Component {
 				}
 			})
 		} else if (diceNum === '') {
-			console.warn('Deleting final character results in empty string. Empty string is not a number, so its invalidated.\nThis is a bug! You should be able to delete the number!')
-			// TODO: Fix that bug!
-			// TODO: When there is nothing left, remove the key from the inputDice object.
+			this.setState({
+				inputDice: {
+					...this.state.inputDice,
+					[diceSize]: 0
+				}
+			})
 		}
 	}
 
