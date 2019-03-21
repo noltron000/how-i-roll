@@ -161,9 +161,9 @@ class App extends Component {
 						</header>
 
 
-						<div id='button-container'>
+						{/* <div id='button-container'>
 							<button id='roll-button' onClick={this.roll_dice}>Roll Dice</button>
-						</div>
+						</div> */}
 
 						<div id='results-bar'>
 							<label htmlFor='output-box'><h2>Result:</h2></label>
