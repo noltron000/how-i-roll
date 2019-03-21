@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import info_icon from '../img/iconmonstr-info-6-icon.svg'
+import info_icon from '../img/info.svg'
 import '../css/app.css';
 
 import Interface from '../jsx/interface.jsx'
