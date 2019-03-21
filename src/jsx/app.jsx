@@ -9,7 +9,29 @@ class App extends Component {
 	state = {
 		inputDice: {},
 		rollResult: 0,
+		shakeAwait: false,
 	};
+
+	// adds a single mount event for device motion
+	// see https://developer.mozilla.org/en-US/docs/Web/API/Detecting_device_orientation
+	componentDidMount = () => {
+		window.addEventListener('devicemotion', (event) => {
+			const { x, y, z } = event.acceleration
+			const { alpha, beta, gamma } = event.rotationRate
+
+			if(!this.state.shakeAwait
+			&& (Math.abs(x) + Math.abs(y) + Math.abs(z) > 30
+			|| Math.abs(alpha) + Math.abs(beta) + Math.abs(gamma)) > 1200) {
+
+				this.setState({shakeAwait: true})
+				setTimeout(() => {
+					this.setState({shakeAwait: false})
+				}, 300);
+
+				this.roll_dice()
+			}
+		});
+	}
 
 
 	// update state when dice textarea changes
@@ -90,6 +112,7 @@ class App extends Component {
 			const diceObj = {diceNum, diceSize}
 			total += this.randomize_dice(diceObj)
 		}
+		window.navigator.vibrate(50);
 		this.setState({rollResult: total})
 	}
 
