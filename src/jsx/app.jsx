@@ -4,6 +4,7 @@ import info_icon from '../img/info.svg'
 import '../css/app.css'
 
 import Interface from '../jsx/interface.jsx'
+import Info from '../jsx/info.jsx'
 
 class App extends Component {
 	state = {
@@ -132,30 +133,33 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<section id='display'>
-					<div id='overlay'>
-						<header id='title-header'>
-							<img id='info' alt='more info...' src={info_icon} />
-							<h1 id='title'>How I Roll</h1>
-						</header>
+				<Info id='info' />
+				<div id='content'>
+					<section id='display'>
+						<div id='overlay'>
+							<header id='title-header'>
+								<img id='info' alt='more info...' src={info_icon} />
+								<h1 id='title'>How I Roll</h1>
+							</header>
 
-						<div id='button-container'>
-							<button id='roll-button' onClick={this.roll_dice}>Roll Dice</button>
+							<div id='button-container'>
+								<button id='roll-button' onClick={this.roll_dice}>Roll Dice</button>
+							</div>
+
+							<div id='results-bar'>
+								<label htmlFor='output-box'><h2>Result:</h2></label>
+								<output id='output-box' htmlFor='dice-box' value=''>{this.state.rollResult}</output>
+							</div>
 						</div>
 
-						<div id='results-bar'>
-							<label htmlFor='output-box'><h2>Result:</h2></label>
-							<output id='output-box' htmlFor='dice-box' value=''>{this.state.rollResult}</output>
+						<div id='dice-tray'>
 						</div>
-					</div>
+					</section>
 
-					<div id='dice-tray'>
-					</div>
-				</section>
-
-				<section id='interface'>
-					<Interface update_dice={this.update_dice} inputDice={this.state.inputDice} />
-				</section>
+					<section id='interface'>
+						<Interface update_dice={this.update_dice} inputDice={this.state.inputDice} />
+					</section>
+				</div>
 			</div>
 		)
 	}
