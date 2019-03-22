@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 import info_icon from '../img/info.svg'
-import '../css/app.css';
+import '../css/app.css'
 
 import Interface from '../jsx/interface.jsx'
 
@@ -11,7 +11,7 @@ class App extends Component {
 		inputDice: {},
 		rollResult: 0,
 		shakeAwait: false,
-	};
+	}
 
 	// adds events listener when app component initializes
 	componentDidMount = () => {
@@ -31,11 +31,11 @@ class App extends Component {
 				// shakeAwait enforces less function spam
 				this.setState({shakeAwait: true})
 				// shakeAwait turns off after 300ms
-				setTimeout(this.setState({shakeAwait: false}), 300);
+				setTimeout(this.setState({shakeAwait: false}), 300)
 				// roll the dice stored in state
 				this.roll_dice()
 			}
-		});
+		})
 	}
 
 	// update state when dice textarea changes
@@ -124,7 +124,7 @@ class App extends Component {
 			const diceObj = {diceNum, diceSize}
 			total += this.randomize_dice(diceObj)
 		}
-		window.navigator.vibrate(50);
+		window.navigator.vibrate(50)
 		this.setState({rollResult: total})
 	}
 
@@ -157,8 +157,8 @@ class App extends Component {
 					<Interface update_dice={this.update_dice} inputDice={this.state.inputDice} />
 				</section>
 			</div>
-		);
+		)
 	}
 }
 
-export default App;
+export default App
