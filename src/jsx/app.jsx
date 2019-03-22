@@ -7,6 +7,7 @@ import Interface from '../jsx/interface.jsx'
 
 class App extends Component {
 	state = {
+		// inputDice is an object whose key is 'dice-size' and value is 'dice-amt'
 		inputDice: {},
 		rollResult: 0,
 		shakeAwait: false,
@@ -38,14 +39,19 @@ class App extends Component {
 	}
 
 	// update state when dice textarea changes
-	update_dice = (diceNum, diceSize) => {
+	update_dice = (diceNum, diceSize, min=0, max=999) => {
+
 		// need to make sure input is an integer
 		if (!isNaN(parseInt(diceNum))) {
 			// if it is, we expand the object and add a new item
+			let niceNum = parseInt(diceNum, 10)
+			if (niceNum < min) {niceNum = min}
+			else if (niceNum > max) {niceNum = max}
+			// after parsing, we send it through setState
 			this.setState({
 				inputDice: {
 					...this.state.inputDice,
-					[diceSize]: parseInt(diceNum, 10),
+					[diceSize]: [niceNum]
 				}
 			})
 		} else if (diceNum === '') {
