@@ -25,7 +25,7 @@ class App extends Component {
 			// check if rotation or acceleration are arbitrarily high
 			if(!this.state.shakeAwait
 			&& (Math.abs(x) + Math.abs(y) + Math.abs(z) > 30
-			|| Math.abs(alpha) + Math.abs(beta) + Math.abs(gamma)) > 1200) {
+			|| Math.abs(alpha) + Math.abs(beta) + Math.abs(gamma) > 1200)) {
 
 				// shakeAwait enforces less function spam
 				this.setState({shakeAwait: true})
