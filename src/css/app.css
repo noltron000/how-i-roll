@@ -16,10 +16,22 @@ p, a {
 	margin: 0;
 }
 
+h1 {
+	font-size: 2em
+}
+
+h1 {
+	font-size: 1.5em
+}
+
 button, .button {
 	border-radius: 0.5em;
 	border-width: 0.25em;
 	padding: 0.25em 1em;
+}
+
+button#roll-button {
+	font-size: 1.5em;
 }
 
 /* DISPLAY CSS / TOP ITEMS */
@@ -29,7 +41,7 @@ button, .button {
 
 #display {
 	color: black;
-	height: calc(100vh * 5/6 - 120px);
+	height: calc(100vh * 3/4 - 120px);
 }
 
 /* overlay css */
@@ -95,6 +107,11 @@ button, .button {
 	opacity: 1;
 }
 
+#info * {
+	width: 48px;
+	height: 48px;
+}
+
 /* button */
 
 #roll-button {
@@ -104,7 +121,7 @@ button, .button {
 /* results bar */
 
 #output-box {
-	font-size: 3em;
+	font-size: 6em;
 }
 
 /* INTERFACE CSS / BOTTOM */
@@ -113,6 +130,13 @@ button, .button {
 	background-color: #013;
 	box-shadow:
 		0px 8px 32px black;
-	height: calc(100vh * 1/6 + 120px);
+	height: calc(100vh * 1/4 + 120px);
 	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#dice-box {
+	padding-bottom: 20px;
 }

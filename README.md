@@ -20,7 +20,7 @@ I won't sugarcoat it. Most of them stink! The ones that don't stink often lack o
 
 - [x] Open Source!
 - [x] Online accessible
-- [ ] Progressive Web App
+- [x] Progressive Web App
 - [ ] High search engine optimization
 - [ ] On the Google Play Store
 - Mobile integration
