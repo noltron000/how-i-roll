@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 import InputDice from '../jsx/input-dice.jsx'
 

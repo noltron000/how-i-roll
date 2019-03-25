@@ -49,11 +49,11 @@ button, .button {
 #button-container {
 	pointer-events: none;
 	height: inherit;
+	position: absolute;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
 }
 
 #button-container * {
