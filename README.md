@@ -16,19 +16,23 @@ This app is "How I Roll". It's a web app that can simulate dice rolls.
 ## Another Dice App!?
 There are plenty of dice apps out there already - on the web, the app store, the play store...(and yes &mdash; even the microsoft store.) So why do we need *yet another*?
 
+I won't sugarcoat it. Most of them stink! The ones that don't stink often lack other key features or are not free. Rather than settling with mediocrity, *How I Roll* reaches for the stars, offering an abundance of features:
+
 - [x] Open Source!
 - [x] Online accessible
 - [ ] Progressive Web App
+- [ ] High search engine optimization
 - [ ] On the Google Play Store
-- [ ] 3D Dice
-- [ ] Favorite dice rolls
 - Mobile integration
 	- [x] shake to roll
 	- [x] swipe to roll
 - Powerful dice features
-	- [ ] drop n lowest/highest
-	- [ ] roll XdY dice Z times
-	- [ ] explode dice on crit
+	- [ ] 3D dice
+	- [ ] favorite dice rolls
+	- [ ] roll `XdY` dice `Z` times
+	- [ ] drop `N` lowest/highest dice in pool
+	- [ ] reroll conditional dice in pool at most `N` times
+	- [ ] explode conditional dice in pool at most `N` times
 	- [ ] add modifiers
 	- [ ] arbitrary dice sizes
 
