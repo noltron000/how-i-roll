@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 
-import info_icon from '../img/info.svg'
+import octocat from '../img/octocat.svg'
 import '../css/app.css'
 
 import Interface from '../jsx/interface.jsx'
-import Info from '../jsx/info.jsx'
 
 class App extends Component {
 	state = {
@@ -133,12 +132,13 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<Info id='info' />
 				<div id='content'>
 					<section id='display'>
 						<div id='overlay'>
 							<header id='title-header'>
-								<img id='info' alt='more info...' src={info_icon} />
+								<a id='info' href='https://github.com/noltron000/how-i-roll'>
+									<img alt='more info...' src={octocat} />
+								</a>
 								<h1 id='title'>How I Roll</h1>
 							</header>
 
