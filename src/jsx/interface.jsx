@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 import InputDice from '../jsx/input-dice.jsx'
 
@@ -14,7 +14,6 @@ import d00 from '../img/d00.svg'
 class Interface extends Component {
 	render() {
 		return(
-			<div id='interface'>
 				<div id='dice-box'>
 					<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='4' source={d4} />
 					<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='6' source={d6} />
@@ -24,7 +23,6 @@ class Interface extends Component {
 					<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='20' source={d20} />
 					<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='100' source={d00} />
 				</div>
-			</div>
 		)
 	}
 }
