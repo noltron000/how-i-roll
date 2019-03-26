@@ -36,5 +36,25 @@ I won't sugarcoat it. Most of them stink! The ones that don't stink often lack o
 	- [ ] add modifiers
 	- [ ] arbitrary dice sizes
 
+## Instructions
+If you want to learn how to use the website, follow these instructions:
+1. visit the website
+2. each of the images at the bottom represent different dice
+3. enter a number for the input on one or many of these dice
+4. click "roll dice"
+	- if you are on a mobile device, you can shake your phone instead of clicking the button.
+	
+*Note: this website is 100% PWA. Once you visit it, you can access the website even while you are offline!*
+
+## Set Up for Development
+If you are a developer, you can set this repository up locally by following just a few steps:
+1. clone or fork this repository
+2. `cd` to the repository root in your terminal
+3. run `npm install`
+4. run `npm run`
+5. visit `http://localhost:3000/` in a web browser of your choice
+6. react creates a url on your network by default. You can visit this link on your phone to develop for mobile with live changes.
+
 ## Sources
 1. [Wikipedia](https://en.wikipedia.org/wiki/Dice_notation)
+
