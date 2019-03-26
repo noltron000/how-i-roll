@@ -1,5 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9932c864-6a6e-4bd2-8360-a585dc650356/deploy-status)](https://app.netlify.com/sites/how-i-roll/deploys)
 
+*[Live](https://how-i-roll.netlify.com/) on Netlify*
+
 # Intensive Project
 This project was made for the intensive project course @ [Make School](https://make.sc/), focusing on my skills in three key tools:
 - Agile Development
