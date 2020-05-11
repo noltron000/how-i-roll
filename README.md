@@ -45,8 +45,30 @@ If you want to learn how to use the website, follow these instructions:
 3. enter a number for the input on one or many of these dice
 4. click "roll dice"
 	- if you are on a mobile device, you can shake your phone instead of clicking the button.
-	
+
 *Note: this website is 100% PWA. Once you visit it, you can access the website even while you are offline!*
+
+## Uses Docker
+If you want to try running a docker container, run these commands.
+Create the image, then run it in a container.
+Everything else is provided to you in the `Dockerfile`.
+
+### Create an Image
+```bash
+docker build --tag "how-i-roll":0.1.0 .
+```
+
+### Run the Image in a Container
+```bash
+docker run \
+	-it \
+	--rm \
+	-v ${PWD}:/app \
+	-v /app/node_modules \
+	-p 3001:3000 \
+	-e CHOKIDAR_USEPOLLING=true \
+	"how-i-roll":0.1.0
+```
 
 ## Set Up for Development
 If you are a developer, you can set this repository up locally by following just a few steps:
@@ -59,4 +81,3 @@ If you are a developer, you can set this repository up locally by following just
 
 ## Sources
 1. [Wikipedia](https://en.wikipedia.org/wiki/Dice_notation)
-
