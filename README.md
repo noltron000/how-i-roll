@@ -55,7 +55,7 @@ Everything else is provided to you in the `Dockerfile`.
 
 ### Create an Image
 ```bash
-docker build --tag "how-i-roll":0.1.0 .
+docker build --tag "how-i-roll":0.2.0 .
 ```
 
 ### Run the Image in a Container
