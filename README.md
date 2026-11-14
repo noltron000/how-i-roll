@@ -1,11 +1,14 @@
 [![GitHub Pages deployment status](https://img.shields.io/github/actions/workflow/status/noltron000/how-i-roll/deploy.yml?branch=main&label=GitHub%20Pages)](https://github.com/noltron000/how-i-roll/actions/workflows/deploy.yml)
 
 # How I Roll
-*This project is [live on the web](https://projects.nebuloid.dev/how-i-roll/).*
+*This project is [**live on the web**](https://projects.nebuloid.dev/how-i-roll/)!*
 
 This app is *How I Roll*.
-It's a web app that can simulate dice rolls.
-The screenshot below outputs an example of how it works:
+It's a progressive web app (PWA) that can simulate dice rolls.
+Being a PWA, it is mobile friendly!
+Made with CRA (Create React App) and later updated to use Vite.
+
+Below is a screenshot of the website...
 
 <div align='center'>
 	<img
