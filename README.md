@@ -3,15 +3,17 @@
 # How I Roll
 *This project is [live on the web](https://projects.nebuloid.dev/how-i-roll/).*
 
-<img
-	align='right'
-	width='280'
-	src='public/3d6.png'
-	alt='How I Roll after rolling 3d6'
-/>
-
-This app is called "How I Roll".
+This app is *How I Roll*.
 It's a web app that can simulate dice rolls.
+The screenshot below outputs an example of how it works:
+
+<div align='center'>
+	<img
+		width='280'
+		src='public/3d6.png'
+		alt='How I Roll after rolling 3d6'
+	/>
+</div>
 
 ### Intensive Project
 This project was made for the intensive project course @[Make School](https://make.sc/), focusing on three key tools:
