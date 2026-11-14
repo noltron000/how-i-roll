@@ -21,27 +21,9 @@ In the repository settings, set **Pages → Build and deployment → Source** to
 The production site is published at https://projects.nebuloid.dev/how-i-roll/.
 
 ## Another Dice App!?
-There are plenty of dice apps out there already - on the web, the app store, the play store...(and yes &mdash; even the microsoft store.) So why do we need *yet another*?
-
-I won't sugarcoat it. Most of them stink! The ones that don't stink often lack other key features or are not free. Rather than settling with mediocrity, *How I Roll* reaches for the stars, offering an abundance of features:
-
-- [x] Open Source!
-- [x] Online accessible
-- [x] Progressive Web App
-- [ ] High search engine optimization
-- [ ] On the Google Play Store
-- Mobile integration
-	- [x] shake to roll
-	- [x] swipe to roll
-- Powerful dice features
-	- [ ] 3D dice
-	- [ ] favorite dice rolls
-	- [ ] roll `XdY` dice `Z` times
-	- [ ] drop `N` lowest/highest dice in pool
-	- [ ] reroll conditional dice in pool at most `N` times
-	- [ ] explode conditional dice in pool at most `N` times
-	- [ ] add modifiers
-	- [ ] arbitrary dice sizes
+There are plenty of dice apps, but sometimes a simple one is all you need.
+*How I Roll* is an open-source browser dice roller with shake and swipe controls on mobile.
+After your first visit, it can also work offline.
 
 ## Instructions
 If you want to learn how to use the website, follow these instructions:
