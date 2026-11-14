@@ -1,19 +1,16 @@
 [![GitHub Pages deployment status](https://img.shields.io/github/actions/workflow/status/noltron000/how-i-roll/deploy.yml?branch=main&label=GitHub%20Pages)](https://github.com/noltron000/how-i-roll/actions/workflows/deploy.yml)
 
-*[Live on GitHub Pages](https://projects.nebuloid.dev/how-i-roll/)*
+# How I Roll
+*This project is [live on the web](https://projects.nebuloid.dev/how-i-roll/).*
 
-# Intensive Project
-This project was made for the intensive project course @ [Make School](https://make.sc/), focusing on my skills in three key tools:
+This app is called "How I Roll".
+It's a web app that can simulate dice rolls.
+
+### Intensive Project
+This project was made for the intensive project course @[Make School](https://make.sc/), focusing on three key tools:
 - Agile Development
 - Progressive Web Apps
-- React
-
-# How I Roll
-This app is "How I Roll". It's a web app that can simulate dice rolls.
-> ***Links for Your Convenience:***
-> - [Project Proposal](https://github.com/noltron000/how-i-roll/blob/main/PROPOSAL.md)
-> - [Open Source License](https://github.com/noltron000/how-i-roll/blob/main/LICENSE.md)
-> - [Live App on GitHub Pages](https://projects.nebuloid.dev/how-i-roll/)
+- React.js
 
 ## Deploying to GitHub Pages
 Pushes to `main` build and deploy the site through GitHub Actions.
@@ -21,68 +18,29 @@ In the repository settings, set **Pages → Build and deployment → Source** to
 The production site is published at https://projects.nebuloid.dev/how-i-roll/.
 
 ## Another Dice App!?
-There are plenty of dice apps out there already - on the web, the app store, the play store...(and yes &mdash; even the microsoft store.) So why do we need *yet another*?
-
-I won't sugarcoat it. Most of them stink! The ones that don't stink often lack other key features or are not free. Rather than settling with mediocrity, *How I Roll* reaches for the stars, offering an abundance of features:
-
-- [x] Open Source!
-- [x] Online accessible
-- [x] Progressive Web App
-- [ ] High search engine optimization
-- [ ] On the Google Play Store
-- Mobile integration
-	- [x] shake to roll
-	- [x] swipe to roll
-- Powerful dice features
-	- [ ] 3D dice
-	- [ ] favorite dice rolls
-	- [ ] roll `XdY` dice `Z` times
-	- [ ] drop `N` lowest/highest dice in pool
-	- [ ] reroll conditional dice in pool at most `N` times
-	- [ ] explode conditional dice in pool at most `N` times
-	- [ ] add modifiers
-	- [ ] arbitrary dice sizes
+There are plenty of dice apps, but sometimes a simple one is all you need.
+*How I Roll* is an open-source browser dice roller with shake and swipe controls on mobile.
+After your first visit, it can also work offline!
 
 ## Instructions
 If you want to learn how to use the website, follow these instructions:
 1. visit the website
-2. each of the images at the bottom represent different dice
-3. enter a number for the input on one or many of these dice
-4. click "roll dice"
+1. each of the images at the bottom represent different dice
+1. enter a number for the input on one or many of these dice
+1. click "roll dice"
 	- if you are on a mobile device, you can shake your phone instead of clicking the button.
 
-*Note: this website is 100% PWA. Once you visit it, you can access the website even while you are offline!*
-
-## Uses Docker
-If you want to try running a docker container, run these commands.
-Create the image, then run it in a container.
-Everything else is provided to you in the `Dockerfile`.
-
-### Create an Image
-```bash
-docker build --tag "how-i-roll":0.2.0 .
-```
-
-### Run the Image in a Container
-```bash
-docker run \
-	-it \
-	--rm \
-	-v ${PWD}:/app \
-	-v /app/node_modules \
-	-p 3001:3000 \
-	-e CHOKIDAR_USEPOLLING=true \
-	"how-i-roll":0.1.0
-```
+*Note: this website is 100% PWA.*
+*Once you visit it, you can access the website even while you are offline!*
 
 ## Set Up for Development
 If you are a developer, you can set this repository up locally by following just a few steps:
 1. clone or fork this repository
-2. `cd` to the repository root in your terminal
-3. run `npm install`
-4. run `npm run`
-5. visit `http://localhost:3000/` in a web browser of your choice
-6. react creates a url on your network by default. You can visit this link on your phone to develop for mobile with live changes.
+1. `cd` to the repository root in your terminal
+1. run `corepack yarn install`
+1. run `yarn dev`
+1. visit `http://localhost:5173/` in a web browser of your choice
+1. run `yarn test` to execute the test suite
 
 ## Sources
 1. [Wikipedia](https://en.wikipedia.org/wiki/Dice_notation)

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 import octocat from '../img/octocat.svg'
 import '../css/app.css'
@@ -15,7 +15,6 @@ class Home extends Component {
 
 	// adds events listener when app component initializes
 	componentDidMount = () => {
-
 		// app should only ever be initialized once, else this listener would appear in every instance
 		window.addEventListener('devicemotion', (event) => {
 			// get accelerometer and gyroscope data from device, if any
@@ -24,14 +23,15 @@ class Home extends Component {
 			const { alpha, beta, gamma } = event.rotationRate
 
 			// check if rotation or acceleration are arbitrarily high
-			if(!this.state.shakeAwait
-			&& (Math.abs(x) + Math.abs(y) + Math.abs(z) > 30
-			|| Math.abs(alpha) + Math.abs(beta) + Math.abs(gamma) > 1200)) {
-
+			if (
+				!this.state.shakeAwait &&
+				(Math.abs(x) + Math.abs(y) + Math.abs(z) > 30 ||
+					Math.abs(alpha) + Math.abs(beta) + Math.abs(gamma) > 1200)
+			) {
 				// shakeAwait enforces less function spam
-				this.setState({shakeAwait: true})
+				this.setState({ shakeAwait: true })
 				// shakeAwait turns off after 300ms
-				setTimeout(this.setState({shakeAwait: false}), 300)
+				setTimeout(this.setState({ shakeAwait: false }), 300)
 				// roll the dice stored in state
 				this.roll_dice()
 			}
@@ -39,27 +39,29 @@ class Home extends Component {
 	}
 
 	// update state when dice textarea changes
-	update_dice = (diceNum, diceSize, min=0, max=999) => {
-
+	update_dice = (diceNum, diceSize, min = 0, max = 999) => {
 		// need to make sure input is an integer
 		if (!isNaN(parseInt(diceNum))) {
 			// if it is, we expand the object and add a new item
 			let niceNum = parseInt(diceNum, 10)
-			if (niceNum < min) {niceNum = min}
-			else if (niceNum > max) {niceNum = max}
+			if (niceNum < min) {
+				niceNum = min
+			} else if (niceNum > max) {
+				niceNum = max
+			}
 			// after parsing, we send it through setState
 			this.setState({
 				inputDice: {
 					...this.state.inputDice,
-					[diceSize]: [niceNum]
-				}
+					[diceSize]: [niceNum],
+				},
 			})
 		} else if (diceNum === '') {
 			this.setState({
 				inputDice: {
 					...this.state.inputDice,
-					[diceSize]: 0
-				}
+					[diceSize]: 0,
+				},
 			})
 		}
 	}
@@ -73,23 +75,20 @@ class Home extends Component {
 
 		// iterate through string in state
 		for (const char of diceStr) {
-
 			// change passtype on 'd'
 			if (char === 'd' && !passType) {
 				passType = true
 
-			// this is checking if the char string is in 0123456789
-			} else if(char >= '0' && char <= '9') {
-
+				// this is checking if the char string is in 0123456789
+			} else if (char >= '0' && char <= '9') {
 				// passtype dictates wheter to append size or num
 				if (passType) {
 					diceSize += char
 				} else {
 					diceNum += char
 				}
-
 			} else {
-				console.error("invalid input")
+				console.error('invalid input')
 			}
 		}
 
@@ -106,7 +105,7 @@ class Home extends Component {
 		let total = 0
 
 		// roll each die once
-		while(counter < diceNum) {
+		while (counter < diceNum) {
 			const diceRoll = Math.floor(Math.random() * diceSize + 1)
 			total += diceRoll
 			counter++
@@ -117,15 +116,15 @@ class Home extends Component {
 	}
 
 	roll_dice = () => {
-		const {inputDice} = this.state
+		const { inputDice } = this.state
 		let total = 0
-		for(const diceSize in inputDice) {
+		for (const diceSize in inputDice) {
 			const diceNum = inputDice[diceSize]
-			const diceObj = {diceNum, diceSize}
+			const diceObj = { diceNum, diceSize }
 			total += this.randomize_dice(diceObj)
 		}
 		window.navigator.vibrate(50)
-		this.setState({rollResult: total})
+		this.setState({ rollResult: total })
 	}
 
 	// render HTML output
@@ -143,21 +142,29 @@ class Home extends Component {
 							</header>
 
 							<div id='button-container'>
-								<button id='roll-button' onClick={this.roll_dice}>Roll Dice</button>
+								<button id='roll-button' onClick={this.roll_dice}>
+									Roll Dice
+								</button>
 							</div>
 
 							<div id='results-bar'>
-								<label htmlFor='output-box'><h2>Result:</h2></label>
-								<output id='output-box' htmlFor='dice-box' value=''>{this.state.rollResult}</output>
+								<label htmlFor='output-box'>
+									<h2>Result:</h2>
+								</label>
+								<output id='output-box' htmlFor='dice-box' value=''>
+									{this.state.rollResult}
+								</output>
 							</div>
 						</div>
 
-						<div id='dice-tray'>
-						</div>
+						<div id='dice-tray'></div>
 					</section>
 
 					<section id='interface'>
-						<Interface update_dice={this.update_dice} inputDice={this.state.inputDice} />
+						<Interface
+							update_dice={this.update_dice}
+							inputDice={this.state.inputDice}
+						/>
 					</section>
 				</div>
 			</div>
