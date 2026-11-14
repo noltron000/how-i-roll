@@ -53,36 +53,14 @@ If you want to learn how to use the website, follow these instructions:
 
 *Note: this website is 100% PWA. Once you visit it, you can access the website even while you are offline!*
 
-## Uses Docker
-If you want to try running a docker container, run these commands.
-Create the image, then run it in a container.
-Everything else is provided to you in the `Dockerfile`.
-
-### Create an Image
-```bash
-docker build --tag "how-i-roll":0.2.0 .
-```
-
-### Run the Image in a Container
-```bash
-docker run \
-	-it \
-	--rm \
-	-v ${PWD}:/app \
-	-v /app/node_modules \
-	-p 3001:3000 \
-	-e CHOKIDAR_USEPOLLING=true \
-	"how-i-roll":0.1.0
-```
-
 ## Set Up for Development
 If you are a developer, you can set this repository up locally by following just a few steps:
 1. clone or fork this repository
 2. `cd` to the repository root in your terminal
-3. run `npm install`
-4. run `npm run`
-5. visit `http://localhost:3000/` in a web browser of your choice
-6. react creates a url on your network by default. You can visit this link on your phone to develop for mobile with live changes.
+3. run `corepack yarn install`
+4. run `yarn dev`
+5. visit `http://localhost:5173/` in a web browser of your choice
+6. run `yarn test` to execute the test suite
 
 ## Sources
 1. [Wikipedia](https://en.wikipedia.org/wiki/Dice_notation)
