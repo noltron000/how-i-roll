@@ -4,10 +4,10 @@
 	"private": true,
 	"homepage": "https://projects.nebuloid.dev/how-i-roll",
 	"dependencies": {
-		"react": "^16.8.4",
-		"react-dom": "^16.8.4",
-		"react-router-dom": "^5.1.2",
-		"react-scripts": "2.1.8"
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0",
+		"react-router-dom": "^5.3.4",
+		"react-scripts": "5.0.1"
 	},
 	"scripts": {
 		"start": "react-scripts start",
