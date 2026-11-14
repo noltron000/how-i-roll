@@ -6,11 +6,6 @@
 This app is called "How I Roll".
 It's a web app that can simulate dice rolls.
 
-***Links for Your Convenience***
-- [Project Proposal](https://github.com/noltron000/how-i-roll/blob/main/PROPOSAL.md)
-- [Open Source License](https://github.com/noltron000/how-i-roll/blob/main/LICENSE.md)
-- [Live App on GitHub Pages](https://projects.nebuloid.dev/how-i-roll/)
-
 ### Intensive Project
 This project was made for the intensive project course @[Make School](https://make.sc/), focusing on three key tools:
 - Agile Development
