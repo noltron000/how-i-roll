@@ -3,6 +3,13 @@
 # How I Roll
 *This project is [live on the web](https://projects.nebuloid.dev/how-i-roll/).*
 
+<img
+	align='right'
+	width='280'
+	src='public/3d6.png'
+	alt='How I Roll after rolling 3d6'
+/>
+
 This app is called "How I Roll".
 It's a web app that can simulate dice rolls.
 
