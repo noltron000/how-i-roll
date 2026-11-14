@@ -1,6 +1,6 @@
-import { defineConfig } from 'vitest/config';
-import react from '@vitejs/plugin-react';
-import { VitePWA } from 'vite-plugin-pwa';
+import { defineConfig } from 'vitest/config'
+import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
 	base: '/how-i-roll/',
@@ -21,4 +21,4 @@ export default defineConfig({
 	test: {
 		environment: 'happy-dom',
 	},
-});
+})

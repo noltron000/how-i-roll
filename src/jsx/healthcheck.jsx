@@ -1,12 +1,8 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 class HealthCheck extends Component {
 	render() {
-		return (
-			<div>
-				hey
-			</div>
-		)
+		return <div>hey</div>
 	}
 }
 

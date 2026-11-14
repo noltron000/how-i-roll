@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
-import InputDice from '../jsx/input-dice.jsx'
+import InputDice from '../jsx/input-dice'
 
 import '../css/interface.css'
 import d4 from '../img/d4.svg'
@@ -13,15 +13,50 @@ import d00 from '../img/d00.svg'
 
 class Interface extends Component {
 	render() {
-		return(
+		return (
 			<div id='dice-box'>
-				<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='4' source={d4} />
-				<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='6' source={d6} />
-				<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='8' source={d8} />
-				<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='10' source={d10} />
-				<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='12' source={d12} />
-				<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='20' source={d20} />
-				<InputDice update_dice={this.props.update_dice} inputDice={this.props.inputDice} sides='100' source={d00} />
+				<InputDice
+					update_dice={this.props.update_dice}
+					inputDice={this.props.inputDice}
+					sides='4'
+					source={d4}
+				/>
+				<InputDice
+					update_dice={this.props.update_dice}
+					inputDice={this.props.inputDice}
+					sides='6'
+					source={d6}
+				/>
+				<InputDice
+					update_dice={this.props.update_dice}
+					inputDice={this.props.inputDice}
+					sides='8'
+					source={d8}
+				/>
+				<InputDice
+					update_dice={this.props.update_dice}
+					inputDice={this.props.inputDice}
+					sides='10'
+					source={d10}
+				/>
+				<InputDice
+					update_dice={this.props.update_dice}
+					inputDice={this.props.inputDice}
+					sides='12'
+					source={d12}
+				/>
+				<InputDice
+					update_dice={this.props.update_dice}
+					inputDice={this.props.inputDice}
+					sides='20'
+					source={d20}
+				/>
+				<InputDice
+					update_dice={this.props.update_dice}
+					inputDice={this.props.inputDice}
+					sides='100'
+					source={d00}
+				/>
 			</div>
 		)
 	}
